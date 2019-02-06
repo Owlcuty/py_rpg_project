@@ -465,6 +465,7 @@ def execute_command(command):
 
 
 def main():
+    print('gege')
     draw_map(lvls[level])
     while True:
         draw_map(lvls[level])
@@ -499,7 +500,6 @@ def main():
                 break
 
         execute_command(input('Choose your step: (show status, go, attack, exit)\n'))
-
 
 
 if __name__ == '__main__':
