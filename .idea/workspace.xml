@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c3355242-bca1-4667-be19-82da4a6ca058" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/project_game.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -11,7 +13,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/project$project_game.coverage" NAME="project_game Coverage Results" MODIFIED="1549481918695" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/project$project_game.coverage" NAME="project_game Coverage Results" MODIFIED="1549485483198" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -32,15 +34,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/project_game.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-187">
-              <caret line="188" lean-forward="true" selection-start-line="188" selection-end-line="188" />
+            <state relative-caret-position="323">
+              <caret line="527" column="26" lean-forward="true" selection-start-line="527" selection-start-column="26" selection-end-line="527" selection-end-column="26" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test_from_PyCharm">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -58,6 +55,14 @@
       <find>try</find>
       <find>= 3</find>
       <find>= 10</find>
+      <find>!= '</find>
+      <find>[Lv</find>
+      <find>level += 1</find>
+      <find>Lvl1</find>
+      <find>].fi</find>
+      <find>0 &lt;</find>
+      <find>draw_map():</find>
+      <find>filling(s</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -154,7 +159,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1549451499068</updated>
-      <workItem from="1549451500313" duration="10635000" />
+      <workItem from="1549451500313" duration="12956000" />
     </task>
     <task id="LOCAL-00001" summary="test commit">
       <created>1549458983302</created>
@@ -167,7 +172,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10635000" />
+    <option name="totallyTimeSpent" value="12956000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -218,8 +223,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/project_game.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-187">
-          <caret line="188" lean-forward="true" selection-start-line="188" selection-end-line="188" />
+        <state relative-caret-position="323">
+          <caret line="527" column="26" lean-forward="true" selection-start-line="527" selection-start-column="26" selection-end-line="527" selection-end-column="26" />
         </state>
       </provider>
     </entry>

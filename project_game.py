@@ -373,6 +373,7 @@ class Actions(object):
     @staticmethod
     def go(unit):
         # TODO displacement of unit to point (x, y)
+        global level, lvls
         lvls[level].if_show_step = True
         draw_map()
         print('You can go to "#" field')
@@ -383,7 +384,7 @@ class Actions(object):
             try:
                 xy = [xy[0]] + [xy[1:]]
                 print(xy)
-                while (not xy[0] in abc) or (not xy[1].isdigit()) or not(0 < int(xy[1]) - 1 < lvls[level].m) or not(0 < abc.index(xy[0]) < lvls[level].n) or shown_map[abc.index(xy[0])][int(xy[1]) - 1] != '#':
+                while (not xy[0] in abc) or (not xy[1].isdigit()) or not(0 <= int(xy[1]) - 1 < lvls[level].m) or not(0 <= abc.index(xy[0]) < lvls[level].n) or not(shown_map[abc.index(xy[0])][int(xy[1]) - 1] == '#' or shown_map[abc.index(xy[0])][int(xy[1]) - 1] == 'E'):
                     xy = input('Please, write correct data or go out with "cancel"\n')
                     if xy == "cancel":
                         return unit
@@ -393,6 +394,9 @@ class Actions(object):
                 print(ValueError)
                 continue
 
+        if shown_map[abc.index(xy[0])][int(xy[1]) - 1] == 'E':
+            level += 1
+            lvls.append(lvls_names[level](Map(nms_of_levels[level][0], nms_of_levels[level][1])))
         unit.x = int(xy[1]) - 1
         unit.y = abc.index(xy[0])
         return unit
@@ -420,6 +424,28 @@ class Lvl0(Actions):
         self.filling()
 
 
+class Lvl1(Actions):
+    '''
+        description of lvl1
+    '''
+
+    def __init__(self, mapp):
+        # TODO filling datas about lvl
+        self.n = mapp.n
+        self.m = mapp.m
+        self.maze = mapp.maze
+        self.units = {
+            'Exit': [[0, self.m - 1]],
+            'Hero': [[self.n - 1, 0]],
+            'mag': [[2, 5], [2, 6], [3, 7]],
+            'war': [[3, 4], [4, 5], [8, 5], [6, 7]],
+            'pal': [[6, 8], [5, 8]],
+            'pro': [],
+            'slr': [[3, 4], [1, 9]]
+        }
+        self.filling()
+
+
 def draw_map():
     # TODO drawing map
     '''
@@ -429,6 +455,7 @@ def draw_map():
     '''
     global shown_map
     self = lvls[level]
+    print(level)
     for i in range(self.n):
         for j in range(self.m):
             self.maze[i][j] = '.'
@@ -487,11 +514,28 @@ def show_status():
     print()
 
 
-class_of_hero = input('Please, choose your class: Warrior, Prophet, Magician, Slayer, Paladin\n')
+classes = ['Warrior', 'Prophet', 'Magician', 'Slayer', 'Paladin']
+while True:
+    try:
+        class_of_hero = name_of_classes[input('Please, choose your class: Warrior, Prophet, Magician, Slayer, Paladin\n')]
+        break
+    except KeyError:
+        print('Write correct:')
+        for i in classes:
+            print('\t' + i)
+
 #class_of_hero = 'war'
 hero = Hero(class_of_hero)
 hero.set_start_datas()
-lvls = [Lvl0(Map(10, 10))]
+nms_of_levels = {
+    0: (10, 10),
+    1: (13, 13)
+}
+lvls_names = {
+    0: Lvl0,
+    1: Lvl1
+}
+lvls = []
 level = 0
 
 
@@ -506,8 +550,8 @@ def execute_command(command):
 
 def main():
     print('gege')
+    lvls.append(lvls_names[0](Map(10, 10)))
     draw_map()
-    prev = ''
     while True:
         draw_map()
         while hero.add_points > 0:
