@@ -17,7 +17,7 @@ import random
 import math
 
 abc = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P']
-
+shown_map = None
 
 # from colorama import init, Fore, Back, Style
 
@@ -39,6 +39,7 @@ class Warrior(object):
     intelligence_start = 4
     sense_start = 6
     vitality_start = 8
+    step_start = 1
 
     @staticmethod
     def up(player):
@@ -66,6 +67,7 @@ class Palladin(object):
     intelligence_start = 4
     sense_start = 6
     vitality_start = 8
+    step_start = 1
 
     @staticmethod
     def up(player):
@@ -88,11 +90,13 @@ class Magician(object):
     '''
     hp_start = 100
     mp_start = 30
+    stam_start = 30
     strength_start = 10
     agility_start = 7
     intelligence_start = 4
     sense_start = 6
     vitality_start = 8
+    step_start = 3
 
     @staticmethod
     def up(player):
@@ -115,11 +119,13 @@ class Slayer(object):
     '''
     hp_start = 100
     mp_start = 30
+    stam_start = 30
     strength_start = 10
     agility_start = 7
     intelligence_start = 4
     sense_start = 6
     vitality_start = 8
+    step_start = 2
 
     @staticmethod
     def up(player):
@@ -142,11 +148,13 @@ class Prophet(object):
     '''
     hp_start = 100
     mp_start = 30
+    stam_start = 30
     strength_start = 10
     agility_start = 7
     intelligence_start = 4
     sense_start = 6
     vitality_start = 8
+    step_start = 1
 
     @staticmethod
     def up(player):
@@ -223,6 +231,7 @@ class Hero(Class):
     x = None
     y = None
     add_points = 5
+    step = None
 
     def set_start_datas(self):
         self.hp = self.unit.hp_start
@@ -233,6 +242,7 @@ class Hero(Class):
         self.intelligence = self.unit.intelligence_start
         self.sense = self.unit.sense_start
         self.vitality = self.unit.vitality_start
+        self.step = self.unit.step_start
         self.lvl = 0
 
     def take_damage(self, damage):
@@ -328,6 +338,7 @@ class Actions(object):
     pals = []
     prophs = []
     slayers = []
+    if_show_step = False
 
     def __init__(self):
         pass
@@ -360,8 +371,28 @@ class Actions(object):
         print('_' * self.m)
 
     @staticmethod
-    def go(unit, xy):
+    def go(unit):
         # TODO displacement of unit to point (x, y)
+        lvls[level].if_show_step = True
+        draw_map()
+        print('You can go to "#" field')
+        xy = input('Write coordinates like "J2". If you want to cancel movement write "cancel"\n')
+        if xy == "cancel":
+            return unit
+        while True:
+            try:
+                xy = [xy[0]] + [xy[1:]]
+                print(xy)
+                while (not xy[0] in abc) or (not xy[1].isdigit()) or not(0 < int(xy[1]) - 1 < lvls[level].m) or not(0 < abc.index(xy[0]) < lvls[level].n) or shown_map[abc.index(xy[0])][int(xy[1]) - 1] != '#':
+                    xy = input('Please, write correct data or go out with "cancel"\n')
+                    if xy == "cancel":
+                        return unit
+                break
+            except:
+                xy = input('Please, write correct data or go out with "cancel"\n')
+                print(ValueError)
+                continue
+
         unit.x = int(xy[1]) - 1
         unit.y = abc.index(xy[0])
         return unit
@@ -389,13 +420,15 @@ class Lvl0(Actions):
         self.filling()
 
 
-def draw_map(self):
+def draw_map():
     # TODO drawing map
     '''
 
     :param self: level's object
     :return: drawn map
     '''
+    global shown_map
+    self = lvls[level]
     for i in range(self.n):
         for j in range(self.m):
             self.maze[i][j] = '.'
@@ -409,6 +442,24 @@ def draw_map(self):
                     break
                 elif it == 'Exit':
                     self.maze[xy[0]][xy[1]] = it[0]
+    if self.if_show_step:
+        # TODO drawing fields for movement
+        if hero.step == 1:
+            for i in range(self.n):
+                for j in range(self.m):
+                    if self.maze[i][j] != '.': continue
+                    if abs(i - hero.y) <= 1 and abs(j - hero.x) <= 1:
+                        self.maze[i][j] = '#'
+        else:
+            for i in range(self.n):
+                for j in range(self.m):
+                    if self.maze[i][j] != '.' or (abs(i - hero.y) == hero.step and abs(j - hero.x) == hero.step): continue
+                    if abs(i - hero.y) <= hero.step and abs(j - hero.x) <= hero.step:
+                        self.maze[i][j] = '#'
+        self.if_show_step = False
+
+    shown_map = self.maze[:]
+
     print(' ', str([int(i) for i in range(1, lvls[level].m + 1)])[1:-1].split(', '))
     print('-' * (lvls[level].m * 5))
     for i in range(len(lvls[level].maze)):
@@ -418,18 +469,6 @@ def draw_map(self):
 
 def show_status():
     # TODO show the hero's characterizations
-    '''
-    hp
-    mp
-    lvl
-    strength
-    agility
-    intelligence
-    sense
-    vitality
-    effect
-    :return:
-    '''
     print('Status of hero')
     print('_'*50)
     print(f'level: {hero.lvl}')
@@ -442,13 +481,14 @@ def show_status():
     print(f'vitality: {hero.vitality}')
     print(f'effect_fis: {hero.effect_fis}')
     print(f'effect_mag: {hero.effect_mag}')
+    print(f'length of step: {hero.step}')
     print()
     print(f'add_points: {hero.add_points}')
     print()
 
 
-#class_of_hero = input('Please, choose your class: Warrior, Prophet, Magician, Slayer, Paladin\n')
-class_of_hero = 'war'
+class_of_hero = input('Please, choose your class: Warrior, Prophet, Magician, Slayer, Paladin\n')
+#class_of_hero = 'war'
 hero = Hero(class_of_hero)
 hero.set_start_datas()
 lvls = [Lvl0(Map(10, 10))]
@@ -461,14 +501,15 @@ def execute_command(command):
     if command == 'exit':
         exit()
     if command == 'go':
-        lvls[level].go()
+        lvls[level].go(hero)
 
 
 def main():
     print('gege')
-    draw_map(lvls[level])
+    draw_map()
+    prev = ''
     while True:
-        draw_map(lvls[level])
+        draw_map()
         while hero.add_points > 0:
             if input(f'You have {hero.add_points} points for upgrade your characterizations. Would you want to do it? '
                      f'(yes/no)\n') == 'yes':
@@ -478,10 +519,11 @@ def main():
                 print(f'3.    sense: {hero.sense}')
                 print(f'4.    vitality: {hero.vitality}')
                 c = input('Stat and number of points or write "cancel"\n').split()
-                if c == "cancel": break
+                if c[0] == "cancel": break
+                print(c)
                 while int(c[1]) > hero.add_points:
                     print("You don't have so many points. Please, choose again")
-                    c = input('Stat and number of points or write "cancel"').split()
+                    c = input('Stat and number of points or write "cancel"\n').split()
                 if c != "cancel":
                     if c[0] == '1':
                         hero.strength += int(c[1])
