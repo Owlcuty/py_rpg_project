@@ -20,6 +20,7 @@ class Warrior(object):
     sense_start = 6
     vitality_start = 8
     attack_radius = 1
+    attack_start = 20
     step_start = 1
     coof = {
         0: [1, 3, 2, 1],
@@ -56,6 +57,7 @@ class Palladin(object):
     sense_start = 6
     vitality_start = 8
     attack_radius = 1
+    attack_start = 20
     step_start = 1
 
     @staticmethod
@@ -86,6 +88,7 @@ class Magician(object):
     sense_start = 6
     vitality_start = 8
     attack_radius = 2
+    attack_start = 20
     step_start = 3
 
     @staticmethod
@@ -116,6 +119,7 @@ class Slayer(object):
     sense_start = 6
     vitality_start = 8
     attack_radius = 1
+    attack_start = 20
     step_start = 2
 
     @staticmethod
@@ -146,6 +150,7 @@ class Prophet(object):
     sense_start = 6
     vitality_start = 8
     attack_radius = 3
+    attack_start = 20
     step_start = 1
 
     @staticmethod

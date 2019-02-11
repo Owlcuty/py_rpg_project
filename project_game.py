@@ -42,7 +42,8 @@ def show_status():
 
 def upgrade():
     while hero.add_points > 0:
-        print(f'You have {hero.add_points} points for upgrade your characterizations. If you want to exit write "cancel"')
+        print(
+            f'You have {hero.add_points} points for upgrade your characterizations. If you want to exit write "cancel"')
         print('Choose stat:')
         print(f'1.    strength: {hero.strength}')
         print(f'2.    intelligence: {hero.intelligence}')
@@ -51,7 +52,8 @@ def upgrade():
         stat = input()
         if stat == "cancel":
             break
-        if len(stat.split()) != 2 or (len(stat.split()) == 2 and not (stat.split()[0].isdigit() and stat.split()[1].isdigit())):
+        if len(stat.split()) != 2 or (
+                len(stat.split()) == 2 and not (stat.split()[0].isdigit() and stat.split()[1].isdigit())):
             print("Pls, write correct like '1 5' ( to upgrade strength on 5 points )")
             continue
         stat = stat.split()
@@ -73,12 +75,34 @@ def upgrade():
         hero.stam = uni.stam
 
 
+def attack():
+    while True:
+        attacked_enemy = input("Choose coordinates of enemy's unit like \"H5\" \n")
+        attacked_enemy = [abc.index(attacked_enemy[0])] + [int(attacked_enemy[1:]) - 1]
+        for it in lvls[level].units.keys():
+            if not it in ['Hero', 'Exit', 'Trap', 'Poison']:
+                for xy in lvls[level].units[it]:
+                    print(it, xy.y, xy.x)
+                    if xy.y == attacked_enemy[0] and xy.x == attacked_enemy[1]:
+                        if hero.attack_radius == 1:
+                            if abs(xy.y - hero.y) + abs(xy.x - hero.x) <= 2:
+                                xy = hero.attack_enemy(xy, hero.attack)
+                                return
+                        else:
+                            if abs(xy.x - hero.x) <= hero.attack_radius and abs(
+                                    xy.y - hero.y) <= hero.attack_radius and not (
+                                    abs(xy.x - hero.x) == hero.attack_radius and abs(xy.y - hero.y) == hero.attack_radius):
+                                xy = hero.attack_enemy(xy, hero.attack)
+                                return
+        print(f'Pls, write correct coordinates. There is nobody on {attacked_enemy}')
+
+
 def execute_command(command):
     com = {
         'show status': show_status,
         'exit': exit,
         'go': lvls[level].go,
-        'attack': 1,
+        'attack': attack,
         'upgrade': upgrade
     }
     if command == 'go':
@@ -97,17 +121,30 @@ def execute_command(command):
         lvls[level].check_for_enemy()
 
 
+def check_enemies():
+    for it in lvls[level].units.keys():
+        if not it in ['Hero', 'Exit', 'Trap', 'Poison']:
+            for i in range(len(lvls[level].units[it])):
+                if i >= len(lvls[level].units[it]):
+                    break
+                xy = lvls[level].units[it][i]
+                if xy.hp <= 0:
+                    lvls[level].units[it].pop(i)
+
+
 def main():
+    hero.attack = 80
     lvls.append(lvls_names[0](Map(10, 10)))
     while True:
+        check_enemies()
         draw_map()
-        print('_'*50+'\n')
+        print('_' * 50 + '\n')
         print('HP: ', hero.hp)
-        print('-'*50)
+        print('-' * 50)
         print('MP: ', hero.mp)
-        print('-'*50)
+        print('-' * 50)
         print('Stamina: ', hero.stam)
-        print('_'*50)
+        print('_' * 50)
         if hero.add_points > 0:
             print(f'You have {hero.add_points} points for upgrade your characterizations')
 

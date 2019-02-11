@@ -57,7 +57,7 @@ class Map(object):
         '''
         # TODO filling map by empty fields
         self.n, self.m = n, m
-        self.maze = [['.'] * m for i in range(n)]
+        self.maze = [['_'] * m for i in range(n)]
 
 
 class Actions(object):
@@ -152,11 +152,11 @@ class Actions(object):
                     print(xy)
                     if xy.attack_radius == 1:
                         if abs(xy.x - hero.x) <= xy.attack_radius and abs(xy.y - hero.y) <= xy.attack_radius:
-                            hero = xy.attack_hero(hero, 20)
+                            hero = xy.attack_hero(hero, xy.attack)
                     else:
                         if abs(xy.x - hero.x) <= xy.attack_radius and abs(xy.y - hero.y) <= xy.attack_radius and not (
                                 abs(xy.x - hero.x) == xy.attack_radius and abs(xy.y - hero.y) == xy.attack_radius):
-                            hero = xy.attack_hero(hero, 20)
+                            hero = xy.attack_hero(hero, xy.attack)
 
 
 def draw_map():
@@ -168,10 +168,13 @@ def draw_map():
     '''
     global shown_map
     self = lvls[level]
+    dop_map = []
+    for i in range(self.n):
+        dop_map.append([' ']*self.m)
     print(level)
     for i in range(self.n):
         for j in range(self.m):
-            self.maze[i][j] = '.'
+            self.maze[i][j] = '_'
     print(self.units)
     print(self.maze)
     for it in self.units.keys():
@@ -179,6 +182,7 @@ def draw_map():
             for xy in self.units[it]:
                 if it in choices.keys():
                     self.maze[xy.y][xy.x] = it[0].upper()
+                    dop_map[xy.y][xy.x] = xy.hp
                 elif it == 'Hero':
                     self.maze[hero.y][hero.x] = 'H'
                     break
@@ -189,13 +193,13 @@ def draw_map():
         if hero.step == 1:
             for i in range(self.n):
                 for j in range(self.m):
-                    if self.maze[i][j] != '.': continue
+                    if self.maze[i][j] != '_': continue
                     if abs(i - hero.y) <= 1 and abs(j - hero.x) <= 1:
                         self.maze[i][j] = '#'
         else:
             for i in range(self.n):
                 for j in range(self.m):
-                    if self.maze[i][j] != '.' or (
+                    if self.maze[i][j] != '_' or (
                             abs(i - hero.y) == hero.step and abs(j - hero.x) == hero.step): continue
                     if abs(i - hero.y) <= hero.step and abs(j - hero.x) <= hero.step:
                         self.maze[i][j] = '#'
@@ -206,6 +210,7 @@ def draw_map():
     print(' ', str([int(i) for i in range(1, lvls[level].m + 1)])[1:-1].split(', '))
     print('-' * (lvls[level].m * 5))
     for i in range(len(lvls[level].maze)):
+        print(' ', dop_map[i])
         print(abc[i], lvls[level].maze[i])
     print('-' * (lvls[level].m * 5))
 

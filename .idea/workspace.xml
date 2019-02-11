@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c3355242-bca1-4667-be19-82da4a6ca058" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Action.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LVLS.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/class_objects.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/desc_classes.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Action.py" beforeDir="false" afterPath="$PROJECT_DIR$/Action.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/class_objects.py" beforeDir="false" afterPath="$PROJECT_DIR$/class_objects.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/desc_classes.py" beforeDir="false" afterPath="$PROJECT_DIR$/desc_classes.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/project_game.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,7 +15,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/project$project_game.coverage" NAME="project_game Coverage Results" MODIFIED="1549884035429" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/project$project_game.coverage" NAME="project_game Coverage Results" MODIFIED="1549889109782" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -35,11 +33,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/project_game.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-277">
-              <caret line="49" column="36" lean-forward="true" selection-start-line="49" selection-start-column="36" selection-end-line="49" selection-end-column="36" />
+            <state relative-caret-position="227">
+              <caret line="130" column="30" lean-forward="true" selection-start-line="130" selection-start-column="30" selection-end-line="130" selection-end-column="30" />
               <folding>
                 <element signature="e#180#191#0" expanded="true" />
               </folding>
@@ -50,8 +48,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Action.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="56" column="11" selection-start-line="56" selection-start-column="11" selection-end-line="56" selection-end-column="11" />
+            <state relative-caret-position="-173">
+              <caret line="106" column="38" lean-forward="true" selection-start-line="106" selection-start-column="38" selection-end-line="106" selection-end-column="38" />
               <folding>
                 <element signature="e#526#544#0" expanded="true" />
               </folding>
@@ -62,17 +60,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/LVLS.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="34" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
+            <state relative-caret-position="135">
+              <caret line="9" column="10" lean-forward="true" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/class_objects.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="76" column="7" lean-forward="true" selection-start-line="76" selection-start-column="7" selection-end-line="76" selection-end-column="7" />
+            <state relative-caret-position="937">
+              <caret line="121" column="37" lean-forward="true" selection-start-line="121" selection-start-column="37" selection-end-line="121" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -80,8 +78,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/desc_classes.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1942">
-              <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+            <state relative-caret-position="127">
+              <caret line="145" column="19" lean-forward="true" selection-start-line="145" selection-start-column="19" selection-end-line="145" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -97,9 +95,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>while 0 &lt; int</find>
-      <find>You don</find>
-      <find>While t</find>
       <find>try</find>
       <find>= 3</find>
       <find>= 10</find>
@@ -127,6 +122,9 @@
       <find>shown_ma</find>
       <find>draw_ma</find>
       <find>Hero</find>
+      <find>20</find>
+      <find>check</find>
+      <find>'.'</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -135,12 +133,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/desc_classes.py" />
         <option value="$PROJECT_DIR$/Actions.py" />
+        <option value="$PROJECT_DIR$/desc_classes.py" />
         <option value="$PROJECT_DIR$/LVLS.py" />
+        <option value="$PROJECT_DIR$/Action.py" />
         <option value="$PROJECT_DIR$/class_objects.py" />
         <option value="$PROJECT_DIR$/project_game.py" />
-        <option value="$PROJECT_DIR$/Action.py" />
       </list>
     </option>
   </component>
@@ -231,7 +229,7 @@
       <workItem from="1549557261091" duration="484000" />
       <workItem from="1549565562965" duration="140000" />
       <workItem from="1549567486141" duration="18789000" />
-      <workItem from="1549828012853" duration="11684000" />
+      <workItem from="1549828012853" duration="16585000" />
     </task>
     <task id="LOCAL-00001" summary="test commit">
       <created>1549458983302</created>
@@ -244,7 +242,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44556000" />
+    <option name="totallyTimeSpent" value="49457000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -281,6 +279,29 @@
       <window_info active="true" anchor="right" id="Run" order="5" visible="true" weight="0.3905775" />
       <window_info anchor="right" id="TODO" order="6" weight="0.26291794" />
     </layout>
+    <layout-to-restore>
+      <window_info auto_hide="true" content_ui="combo" id="Project" internal_type="SLIDING" order="0" type="SLIDING" weight="0.11246201" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="1" />
+      <window_info anchor="bottom" id="Version Control" order="2" weight="0.3289256" />
+      <window_info anchor="bottom" id="Python Console" order="3" />
+      <window_info anchor="bottom" id="Terminal" order="4" />
+      <window_info anchor="bottom" id="Event Log" order="5" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="6" />
+      <window_info anchor="bottom" id="Find" order="7" />
+      <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
+      <window_info anchor="right" id="SciView" order="0" />
+      <window_info anchor="right" id="Database" order="1" weight="0.32978722" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="2" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="3" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="4" weight="0.25" />
+      <window_info active="true" anchor="right" id="Run" order="5" visible="true" weight="0.3905775" />
+      <window_info anchor="right" id="TODO" order="6" weight="0.26291794" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -293,42 +314,42 @@
     <entry file="file://$PROJECT_DIR$/test_from_PyCharm" />
     <entry file="file://$PROJECT_DIR$/desc_classes.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1942">
-          <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+        <state relative-caret-position="127">
+          <caret line="145" column="19" lean-forward="true" selection-start-line="145" selection-start-column="19" selection-end-line="145" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/LVLS.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="34" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
+        <state relative-caret-position="135">
+          <caret line="9" column="10" lean-forward="true" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project_game.py">
+    <entry file="file://$PROJECT_DIR$/class_objects.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-277">
-          <caret line="49" column="36" lean-forward="true" selection-start-line="49" selection-start-column="36" selection-end-line="49" selection-end-column="36" />
-          <folding>
-            <element signature="e#180#191#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="937">
+          <caret line="121" column="37" lean-forward="true" selection-start-line="121" selection-start-column="37" selection-end-line="121" selection-end-column="37" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Action.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="56" column="11" selection-start-line="56" selection-start-column="11" selection-end-line="56" selection-end-column="11" />
+        <state relative-caret-position="-173">
+          <caret line="106" column="38" lean-forward="true" selection-start-line="106" selection-start-column="38" selection-end-line="106" selection-end-column="38" />
           <folding>
             <element signature="e#526#544#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/class_objects.py">
+    <entry file="file://$PROJECT_DIR$/project_game.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="76" column="7" lean-forward="true" selection-start-line="76" selection-start-column="7" selection-end-line="76" selection-end-column="7" />
+        <state relative-caret-position="227">
+          <caret line="130" column="30" lean-forward="true" selection-start-line="130" selection-start-column="30" selection-end-line="130" selection-end-column="30" />
+          <folding>
+            <element signature="e#180#191#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

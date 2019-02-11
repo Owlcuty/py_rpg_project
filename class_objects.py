@@ -68,6 +68,7 @@ class Class(object):
         self.vitality = self.unit.vitality_start
         self.step = self.unit.step_start
         self.attack_radius = self.unit.attack_radius
+        self.attack = self.unit.attack_start
         self.lvl = 0
 
 
@@ -98,7 +99,7 @@ class Hero(Class):
     def up(self):
         pass
 
-    def attack(self, unit, damage):
+    def attack_enemy(self, unit, damage):
         unit.take_damage(damage)
         return unit
 
@@ -107,6 +108,7 @@ class Enemy(Class):
     '''
         Enemy's characterizations with their refreshing
     '''
+    exp = 20
 
     def take_damage(self, damage):
         '''
@@ -116,8 +118,8 @@ class Enemy(Class):
         '''
         self.hp -= damage
         if self.hp <= 0:
-            print("DIIIIE, sorry =)")
-            exit(0)
+            print("You killed enemy's warrior")
+            print(f"+{self.exp} exp")
 
     def attack_hero(self, hero, damage):
         hero.take_damage(damage)
