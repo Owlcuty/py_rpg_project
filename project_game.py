@@ -34,6 +34,9 @@ def show_status():
     print(f'vitality: {hero.vitality}')
     print(f'effect_fis: {hero.effect_fis}')
     print(f'effect_mag: {hero.effect_mag}')
+    print()
+    print(f'attack: {hero.attack}')
+    print()
     print(f'length of step: {hero.step}')
     print()
     print(f'add_points: {hero.add_points}')
@@ -97,13 +100,18 @@ def attack():
         print(f'Pls, write correct coordinates. There is nobody on {attacked_enemy}')
 
 
+sh_stat = True
+
+
 def execute_command(command):
+    global sh_stat
     com = {
         'show status': show_status,
         'exit': exit,
         'go': lvls[level].go,
         'attack': attack,
-        'upgrade': upgrade
+        'upgrade': upgrade,
+        'show map': draw_map
     }
     if command == 'go':
         com[command](hero)
@@ -118,7 +126,10 @@ def execute_command(command):
         print('\t upgrade (stats)')
         execute_command(input())
     if command != 'show status':
+        sh_stat = True
         lvls[level].check_for_enemy()
+    else:
+        sh_stat = False
 
 
 def check_enemies():
@@ -133,11 +144,11 @@ def check_enemies():
 
 
 def main():
-    hero.attack = 80
     lvls.append(lvls_names[0](Map(10, 10)))
     while True:
         check_enemies()
-        draw_map()
+        if sh_stat:
+            draw_map()
         print('_' * 50 + '\n')
         print('HP: ', hero.hp)
         print('-' * 50)
@@ -148,7 +159,7 @@ def main():
         if hero.add_points > 0:
             print(f'You have {hero.add_points} points for upgrade your characterizations')
 
-        execute_command(input('Choose your step: (show status, go, attack, exit, upgrade (stats)\n'))
+        execute_command(input('Choose your step: (show status, go, attack, exit, upgrade (stats), show map\n'))
 
 
 if __name__ == '__main__':
