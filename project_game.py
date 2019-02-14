@@ -44,6 +44,7 @@ def show_status():
 
 
 def upgrade():
+    global hero
     while hero.add_points > 0:
         print(
             f'You have {hero.add_points} points for upgrade your characterizations. If you want to exit write "cancel"')
@@ -76,28 +77,32 @@ def upgrade():
         hero.hp = uni.hp
         hero.mp = uni.mp
         hero.stam = uni.stam
+        hero = hero.up(hero)
 
 
 def attack():
     while True:
-        attacked_enemy = input("Choose coordinates of enemy's unit like \"H5\" \n")
-        attacked_enemy = [abc.index(attacked_enemy[0])] + [int(attacked_enemy[1:]) - 1]
-        for it in lvls[level].units.keys():
-            if not it in ['Hero', 'Exit', 'Trap', 'Poison']:
-                for xy in lvls[level].units[it]:
-                    print(it, xy.y, xy.x)
-                    if xy.y == attacked_enemy[0] and xy.x == attacked_enemy[1]:
-                        if hero.attack_radius == 1:
-                            if abs(xy.y - hero.y) + abs(xy.x - hero.x) <= 2:
-                                xy = hero.attack_enemy(xy, hero.attack)
-                                return
-                        else:
-                            if abs(xy.x - hero.x) <= hero.attack_radius and abs(
-                                    xy.y - hero.y) <= hero.attack_radius and not (
-                                    abs(xy.x - hero.x) == hero.attack_radius and abs(xy.y - hero.y) == hero.attack_radius):
-                                xy = hero.attack_enemy(xy, hero.attack)
-                                return
-        print(f'Pls, write correct coordinates. There is nobody on {attacked_enemy}')
+        try:
+            attacked_enemy = input("Choose coordinates of enemy's unit like \"H5\" or write cancel\n")
+            if attacked_enemy == 'cancel':
+                return
+            attacked_enemy = [abc.index(attacked_enemy[0])] + [int(attacked_enemy[1:]) - 1]
+            for it in lvls[level].units.keys():
+                if not it in ['Hero', 'Exit', 'Trap', 'Poison']:
+                    for xy in lvls[level].units[it]:
+                        if xy.y == attacked_enemy[0] and xy.x == attacked_enemy[1]:
+                            if hero.attack_radius == 1:
+                                if abs(xy.y - hero.y) + abs(xy.x - hero.x) <= 2:
+                                    xy = hero.attack_enemy(xy, hero.attack)
+                                    return
+                            else:
+                                if abs(xy.x - hero.x) <= hero.attack_radius and abs(
+                                        xy.y - hero.y) <= hero.attack_radius and not (
+                                        abs(xy.x - hero.x) == hero.attack_radius and abs(xy.y - hero.y) == hero.attack_radius):
+                                    xy = hero.attack_enemy(xy, hero.attack)
+                                    return
+        except:
+            print(f'Pls, write correct coordinates. There is nobody on {attacked_enemy}')
 
 
 sh_stat = True
@@ -145,16 +150,22 @@ def check_enemies():
 
 def main():
     lvls.append(lvls_names[0](Map(10, 10)))
+    mp_start = choices[class_of_hero].mp_start
+    stam_start = choices[class_of_hero].stam_start
     while True:
         check_enemies()
         if sh_stat:
             draw_map()
         print('_' * 50 + '\n')
         print('HP: ', hero.hp)
+        if mp_start > 0:
+           print('-' * 50)
+           print('MP: ', hero.mp)
+        if stam_start > 0:
+           print('-' * 50)
+           print('Stamina: ', hero.stam)
         print('-' * 50)
-        print('MP: ', hero.mp)
-        print('-' * 50)
-        print('Stamina: ', hero.stam)
+        print('Level: ', hero.lvl, f' {hero.max_of_level[0]}/{hero.max_of_level[1]}')
         print('_' * 50)
         if hero.add_points > 0:
             print(f'You have {hero.add_points} points for upgrade your characterizations')

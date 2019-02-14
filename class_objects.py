@@ -1,5 +1,6 @@
 from desc_classes import *
 #from Action import *
+import time
 
 name_of_classes = {
     'Warrior': 'war',
@@ -24,6 +25,7 @@ class Class(object):
     '''
     hp_start = None
     mp_start = None
+    stam_start = None
     strength_start = None
     agility_start = None
     intelligence_start = None
@@ -77,6 +79,7 @@ class Hero(Class):
         Hero's characterizations with their refreshing
     '''
     add_points = 5
+    max_of_level = [0, 100]
 
     def take_damage(self, damage):
         '''
@@ -89,18 +92,15 @@ class Hero(Class):
             print("DIIIIE, sorry =)")
             exit(0)
 
-    def refresh(self):
-        # TODO refreshing characterizations
-        uni = self.unit.up(self.hp, self.mp, self.stam)
-        self.hp = uni.hp
-        self.mp = uni.mp
-        self.stam = uni.stam
-
-    def up(self):
-        pass
-
     def attack_enemy(self, unit, damage):
         unit.take_damage(damage)
+        if unit.hp <= 0:
+            self.max_of_level[0] += unit.exp
+            while self.max_of_level[0] >= self.max_of_level[1]:
+                self.lvl += 1
+                self.add_points += 5
+                self.max_of_level[0] -= self.max_of_level[1]
+                self.max_of_level[1] *= 2
         return unit
 
 
@@ -108,7 +108,7 @@ class Enemy(Class):
     '''
         Enemy's characterizations with their refreshing
     '''
-    exp = 20
+    exp = 120
 
     def take_damage(self, damage):
         '''
@@ -120,7 +120,9 @@ class Enemy(Class):
         if self.hp <= 0:
             print("You killed enemy's warrior")
             print(f"+{self.exp} exp")
+            time.sleep(1.2)
 
-    def attack_hero(self, hero, damage):
+    @staticmethod
+    def attack_hero(hero, damage):
         hero.take_damage(damage)
         return hero

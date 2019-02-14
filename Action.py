@@ -25,13 +25,12 @@ from LVLS import *
 from class_objects import *
 
 hero = Hero(class_of_hero)
-print(hero, Hero)
 hero.set_start_data()
 shown_map = None
 
 
 def mains():
-    print(globals())
+    pass
 
 
 if __name__ == 'Action':
@@ -80,7 +79,6 @@ class Actions(object):
         pass
 
     def filling(self):
-        print(hero)
         # TODO filling the map and adding new enemy's objects, hero's object and exits
         self.exits = self.units['Exit']
         hero.x, hero.y = self.units['Hero'][0][1], self.units['Hero'][0][0]
@@ -88,17 +86,14 @@ class Actions(object):
         for it in self.units.keys():
             if it in choices.keys():
                 for i in range(len(self.units[it])):
-                    print(self.units[it])
                     y, x = self.units[it][i][0], self.units[it][i][1]
                     self.units[it][i] = Enemy(it)
                     self.units[it][i].set_start_data()
                     self.units[it][i].y, self.units[it][i].x = y, x
 
-        print(self.units)
         for it in self.units.keys():
             if len(self.units[it]) > 0:
                 for xy in self.units[it]:
-                    print(it, self.units[it], xy)
                     if it in choices.keys():
                         self.maze[xy.y][xy.x] = it[0]
                     elif it == 'Hero':
@@ -149,7 +144,6 @@ class Actions(object):
         for it in self.units.keys():
             if not it in ['Hero', 'Exit', 'Trap', 'Poison']:
                 for xy in self.units[it]:
-                    print(xy)
                     if xy.attack_radius == 1:
                         if abs(xy.x - hero.x) <= xy.attack_radius and abs(xy.y - hero.y) <= xy.attack_radius:
                             hero = xy.attack_hero(hero, xy.attack)
@@ -171,12 +165,9 @@ def draw_map():
     dop_map = []
     for i in range(self.n):
         dop_map.append([' ']*self.m)
-    print(level)
     for i in range(self.n):
         for j in range(self.m):
             self.maze[i][j] = '_'
-    print(self.units)
-    print(self.maze)
     for it in self.units.keys():
         if len(self.units[it]) > 0:
             for xy in self.units[it]:
@@ -215,7 +206,6 @@ def draw_map():
     print('-' * (lvls[level].m * 5))
 
 
-
 class Lvl0(Actions):
     '''
             description of lvl0
@@ -240,15 +230,47 @@ class Lvl1(Actions):
         self.n = mapp.n
         self.m = mapp.m
         self.maze = mapp.maze
-        self.units = lvls_units[0]
+        self.units = lvls_units[1]
+        self.filling()
+
+
+class Lvl2(Actions):
+    '''
+            description of lvl1
+        '''
+
+    def __init__(self, mapp):
+        # TODO filling data about lvl
+        self.n = mapp.n
+        self.m = mapp.m
+        self.maze = mapp.maze
+        self.units = lvls_units[2]
+        self.filling()
+
+
+class Lvl3(Actions):
+    '''
+            description of lvl1
+        '''
+
+    def __init__(self, mapp):
+        # TODO filling data about lvl
+        self.n = mapp.n
+        self.m = mapp.m
+        self.maze = mapp.maze
+        self.units = lvls_units[3]
         self.filling()
 
 
 nms_of_levels = {
     0: (10, 10),
-    1: (13, 13)
+    1: (10, 10),
+    2: (10, 10),
+    3: (10, 10)
 }
 lvls_names = {
     0: Lvl0,
-    1: Lvl1
+    1: Lvl1,
+    2: Lvl2,
+    3: Lvl3
 }

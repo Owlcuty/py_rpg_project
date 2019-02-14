@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="c3355242-bca1-4667-be19-82da4a6ca058" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Action.py" beforeDir="false" afterPath="$PROJECT_DIR$/Action.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LVLS.py" beforeDir="false" afterPath="$PROJECT_DIR$/LVLS.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/class_objects.py" beforeDir="false" afterPath="$PROJECT_DIR$/class_objects.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/desc_classes.py" beforeDir="false" afterPath="$PROJECT_DIR$/desc_classes.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/project_game.py" afterDir="false" />
     </list>
@@ -13,7 +16,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/project$project_game.coverage" NAME="project_game Coverage Results" MODIFIED="1550082497820" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/project$project_game.coverage" NAME="project_game Coverage Results" MODIFIED="1550157079704" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -31,11 +34,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/project_game.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1658">
-              <caret line="145" column="11" selection-start-line="145" selection-start-column="11" selection-end-line="145" selection-end-column="11" />
+            <state relative-caret-position="92">
+              <caret line="81" lean-forward="true" selection-start-line="81" selection-end-line="81" />
               <folding>
                 <element signature="e#180#191#0" expanded="true" />
               </folding>
@@ -43,11 +46,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/class_objects.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="202">
+              <caret line="110" column="13" selection-start-line="110" selection-start-column="13" selection-end-line="110" selection-end-column="13" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Action.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
-              <caret line="188" column="34" lean-forward="true" selection-start-line="188" selection-start-column="34" selection-end-line="188" selection-end-column="34" />
+            <state relative-caret-position="292">
+              <caret line="108" column="26" selection-start-line="108" selection-start-column="26" selection-end-line="108" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -56,16 +71,7 @@
         <entry file="file://$PROJECT_DIR$/LVLS.py">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="7" lean-forward="true" selection-start-column="7" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/class_objects.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="19" lean-forward="true" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+              <caret line="3" column="16" lean-forward="true" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -74,7 +80,7 @@
         <entry file="file://$PROJECT_DIR$/desc_classes.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="202">
-              <caret line="120" column="72" lean-forward="true" selection-start-line="120" selection-start-column="72" selection-end-line="120" selection-end-column="72" />
+              <caret line="84" column="20" lean-forward="true" selection-start-line="84" selection-start-column="20" selection-end-line="84" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -90,36 +96,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>level += 1</find>
-      <find>Lvl1</find>
-      <find>].fi</find>
-      <find>0 &lt;</find>
-      <find>draw_map():</find>
-      <find>filling(s</find>
-      <find>Hero(</find>
-      <find>Class(ob</find>
-      <find>Hero(Class)</find>
-      <find>set_</find>
-      <find>datas</find>
-      <find>go,</find>
-      <find>for xy in se</find>
-      <find>Class(o</find>
-      <find>nms_</find>
-      <find>choices</find>
       <find>hero</find>
       <find>shown_map</find>
-      <find>attack</find>
       <find>shown_ma</find>
       <find>draw_ma</find>
       <find>Hero</find>
       <find>20</find>
-      <find>check</find>
       <find>'.'</find>
       <find>filling</find>
       <find>show_stat</find>
       <find>80</find>
       <find>Slaye</find>
       <find>draw_</find>
+      <find>Hero(</find>
+      <find>lvls_na</find>
+      <find>lvls_names</find>
+      <find>sence</find>
+      <find>Di</find>
+      <find>DIII</find>
+      <find>check</find>
+      <find>check_</find>
+      <find>attack</find>
+      <find>attack_ene</find>
+      <find>print</find>
+      <find>draw</find>
+      <find>print(he</find>
+      <find>it,</find>
+      <find>slee</find>
+      <find>add_</find>
+      <find>add_p</find>
+      <find>level += 1</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -129,11 +135,11 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Actions.py" />
-        <option value="$PROJECT_DIR$/class_objects.py" />
-        <option value="$PROJECT_DIR$/LVLS.py" />
-        <option value="$PROJECT_DIR$/project_game.py" />
         <option value="$PROJECT_DIR$/desc_classes.py" />
+        <option value="$PROJECT_DIR$/LVLS.py" />
         <option value="$PROJECT_DIR$/Action.py" />
+        <option value="$PROJECT_DIR$/class_objects.py" />
+        <option value="$PROJECT_DIR$/project_game.py" />
       </list>
     </option>
   </component>
@@ -147,14 +153,27 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../test" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -212,7 +231,7 @@
       <workItem from="1549565562965" duration="140000" />
       <workItem from="1549567486141" duration="18789000" />
       <workItem from="1549828012853" duration="24040000" />
-      <workItem from="1550034194734" duration="4829000" />
+      <workItem from="1550034194734" duration="12966000" />
     </task>
     <task id="LOCAL-00001" summary="test commit">
       <created>1549458983302</created>
@@ -225,7 +244,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61741000" />
+    <option name="totallyTimeSpent" value="69878000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -295,41 +314,44 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/test_from_PyCharm" />
+    <entry file="file://$PROJECT_DIR$/LVLS.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="3" column="16" lean-forward="true" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Action.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="108" column="26" selection-start-line="108" selection-start-column="26" selection-end-line="108" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/class_objects.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="19" lean-forward="true" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+        <state relative-caret-position="202">
+          <caret line="110" column="13" selection-start-line="110" selection-start-column="13" selection-end-line="110" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/desc_classes.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="202">
-          <caret line="120" column="72" lean-forward="true" selection-start-line="120" selection-start-column="72" selection-end-line="120" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LVLS.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="7" lean-forward="true" selection-start-column="7" selection-end-column="7" />
+          <caret line="84" column="20" lean-forward="true" selection-start-line="84" selection-start-column="20" selection-end-line="84" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/project_game.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1658">
-          <caret line="145" column="11" selection-start-line="145" selection-start-column="11" selection-end-line="145" selection-end-column="11" />
+        <state relative-caret-position="92">
+          <caret line="81" lean-forward="true" selection-start-line="81" selection-end-line="81" />
           <folding>
             <element signature="e#180#191#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Action.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="188" column="34" lean-forward="true" selection-start-line="188" selection-start-column="34" selection-end-line="188" selection-end-column="34" />
         </state>
       </provider>
     </entry>
