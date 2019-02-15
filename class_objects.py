@@ -13,7 +13,7 @@ choices = {
     # TODO selected class's object by name
     'war': Warrior,
     'mag': Magician,
-    'pal': Palladin,
+    'pal': Paladin,
     'pro': Prophet,
     'slr': Slayer
 }
@@ -24,8 +24,11 @@ class Class(object):
         description of any unit with selected here class with initial characterizations
     '''
     hp_start = None
+    hp_now = None
     mp_start = None
+    mp_now = None
     stam_start = None
+    stam_now = None
     strength_start = None
     agility_start = None
     intelligence_start = None
@@ -61,8 +64,11 @@ class Class(object):
 
     def set_start_data(self):
         self.hp = self.unit.hp_start
+        self.hp_now = self.hp
         self.mp = self.unit.mp_start
+        self.mp_now = self.mp
         self.stam = self.unit.stam_start
+        self.stam_now = self.stam
         self.strength = self.unit.strength_start
         self.agility = self.unit.agility_start
         self.intelligence = self.unit.intelligence_start
@@ -87,8 +93,8 @@ class Hero(Class):
         :param damage: damage taken from enemy or posion/trap
         '''
         # TODO damage definition | die of hero
-        self.hp -= damage
-        if self.hp <= 0:
+        self.hp_now -= damage
+        if self.hp_now <= 0:
             print("DIIIIE, sorry =)")
             exit(0)
 
@@ -98,6 +104,9 @@ class Hero(Class):
             self.max_of_level[0] += unit.exp
             while self.max_of_level[0] >= self.max_of_level[1]:
                 self.lvl += 1
+                self.hp_now = self.hp
+                self.mp_now = self.mp
+                self.stam_now = self.stam
                 self.add_points += 5
                 self.max_of_level[0] -= self.max_of_level[1]
                 self.max_of_level[1] *= 2

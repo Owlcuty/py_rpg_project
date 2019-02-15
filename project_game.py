@@ -25,10 +25,11 @@ def show_status():
     print('Status of hero')
     print('_' * 50)
     print(f'level: {hero.lvl}')
-    print(f'hp: {hero.hp}')
-    print(f'mp: {hero.mp}')
-    print(f'stamina: {hero.stam}')
+    print(f'hp: {hero.hp_now} / {hero.hp}')
+    print(f'mp: {hero.mp_now} / {hero.mp}')
+    print(f'stamina: {hero.stam_now} / {hero.stam}')
     print(f'strength: {hero.strength}')
+    print(f'agility: {hero.agility}')
     print(f'intelligence: {hero.intelligence}')
     print(f'sense: {hero.sense}')
     print(f'vitality: {hero.vitality}')
@@ -157,13 +158,13 @@ def main():
         if sh_stat:
             draw_map()
         print('_' * 50 + '\n')
-        print('HP: ', hero.hp)
+        print(f'HP: {hero.hp_now} / {hero.hp}')
         if mp_start > 0:
            print('-' * 50)
-           print('MP: ', hero.mp)
+           print(f'MP: {hero.mp_now} / {hero.mp}')
         if stam_start > 0:
            print('-' * 50)
-           print('Stamina: ', hero.stam)
+           print(f'Stamina: {hero.stam_now} / {hero.stam}')
         print('-' * 50)
         print('Level: ', hero.lvl, f' {hero.max_of_level[0]}/{hero.max_of_level[1]}')
         print('_' * 50)
@@ -171,6 +172,7 @@ def main():
             print(f'You have {hero.add_points} points for upgrade your characterizations')
 
         execute_command(input('Choose your step: (show status, go, attack, exit, upgrade (stats), show map\n'))
+        hero.hp_now += min(5, hero.hp - hero.hp_now)
 
 
 if __name__ == '__main__':

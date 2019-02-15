@@ -1,1 +1,70 @@
-For rules and 'how to control'
+В начале игры вам предлагается выбор класса:
+    Warrior (Воин)
+    Magician (Маг)
+    Prophet (Пророк)
+    Paladin (Паладин)
+    Slayer (Убийца)
+
+Каждый имеет свои характерные особенности, включая длину передвижения и радиус атаки
+
+Начальные характеристики
+
+Warrior:
+    HP: 105
+    MP: 100
+    Stamina: 14
+    Strength: 11
+    Agility: 10
+    Intelligence: 4
+    Sense: 5
+    Vitality: 10
+
+    attack: 43
+
+Magician:
+    HP: 73
+    MP: 183
+    Stamina: -
+    Strength: 5
+    Agility: 9
+    Intelligence: 15
+    Sense: 11
+    Vitality: 10
+
+    attack: 46
+
+Paladin:
+    HP: 130
+    MP: 18
+    Stamina: 25
+    Strength: 10
+    Agility: 4
+    Intelligence: 6
+    Sense: 5
+    Vitality: 15
+
+    attack: 41
+
+Prophet:
+    HP: 54
+    MP: 114
+    Stamina: -
+    Strength: 7
+    Agility: 8
+    Intelligence: 8
+    Sense: 10
+    Vitality: 7
+
+    attack: 33
+
+Slayer:
+    HP: 48
+    MP: 21
+    Stamina: 16
+    Strength: 9
+    Agility: 14
+    Intelligence: 4
+    Sense: 8
+    Vitality: 5
+
+    attack: 35

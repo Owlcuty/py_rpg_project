@@ -172,7 +172,10 @@ def draw_map():
         if len(self.units[it]) > 0:
             for xy in self.units[it]:
                 if it in choices.keys():
-                    self.maze[xy.y][xy.x] = it[0].upper()
+                    if not it == 'pro':
+                        self.maze[xy.y][xy.x] = it[0].upper()
+                    else:
+                        self.maze[xy.y][xy.x] = it[0]
                     dop_map[xy.y][xy.x] = xy.hp
                 elif it == 'Hero':
                     self.maze[hero.y][hero.x] = 'H'
