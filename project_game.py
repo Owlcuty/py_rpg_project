@@ -172,7 +172,9 @@ def main():
             print(f'You have {hero.add_points} points for upgrade your characterizations')
 
         execute_command(input('Choose your step: (show status, go, attack, exit, upgrade (stats), show map\n'))
-        hero.hp_now += min(5, hero.hp - hero.hp_now)
+        hero.hp_now += max(min(math.ceil(0.05 * hero.hp), hero.hp - hero.hp_now), 0)
+        hero.mp_now += max(min(math.ceil(0.05 * hero.mp), hero.mp - hero.mp_now), 0)
+        hero.stam_now += max(min(math.ceil(0.05 * hero.stam), hero.stam - hero.stam_now), 0)
 
 
 if __name__ == '__main__':
